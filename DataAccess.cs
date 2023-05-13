@@ -11,7 +11,7 @@ namespace SQLProject
 {
     class DataAccess
     {
-        private static string cnnStr = "Data Source=SEAN\\SQLEXPRESS;Initial Catalog=Demo_DB;Integrated Security=True";
+        private static string cnnStr = "";
 
         public static List<T> GetData<T>(string sql)
         {
