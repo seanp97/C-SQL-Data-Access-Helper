@@ -47,28 +47,13 @@ namespace SQLProject
 
         }
 
-        public static void SQLQuery(string s)
+        public static void SQLQuery(string sql, object? param = null)
         {
             try
             {
                 using (IDbConnection conn = new SqlConnection(cnnStr))
                 {
-                    conn.Execute(s);
-                }
-            }
-            catch(Exception ex)
-            {
-                throw new Exception(ex.ToString());
-            }
-        }
-
-        public static void SQLQueryProc(string s, object? param = null)
-        {
-            try
-            {
-                using (IDbConnection conn = new SqlConnection(cnnStr))
-                {
-                    conn.Execute(s, param);
+                    conn.Execute(sql, param);
                 }
             }
             catch (Exception ex)
