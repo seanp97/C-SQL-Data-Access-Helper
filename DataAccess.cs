@@ -60,6 +60,21 @@ namespace SQLProject
             {
                 throw new Exception(ex.ToString());
             }
+        }
+
+        public static void SQLQueryProc(string s, object param)
+        {
+            try
+            {
+                using (IDbConnection conn = new SqlConnection(cnnStr))
+                {
+                    conn.Execute(s, param);
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.ToString());
+            }
 
         }
     }
